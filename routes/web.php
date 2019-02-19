@@ -21,10 +21,12 @@ $router->get('/lista-usuarios', 'APIController@ListaUsuario');
 //GET CLIENTE
 $router->get('/clientes', 'APIController@ListaClientes');
 $router->get('/clientes/{id}', 'APIController@ListaCliente');
-$router->get('/clientes', 'APIController@CadastraCliente');
+
+// PUT CLIENTE
+$router->put('/clientes', 'APIController@CadastraCliente');
 
 //DELETE CLIENTE
 $router->delete('/clientes/{id}', 'APIController@DeleteCliente');
 
 //ATUALIZA CLIENTE
-$router->put('/clientes', 'APIController@AlteraCliente');
+$router->post('/clientes', 'APIController@AlteraCliente');

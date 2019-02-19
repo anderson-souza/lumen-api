@@ -1,21 +1,28 @@
-# Lumen PHP Framework
+# Lumen-API
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Repositório para fins didáticos.  
+Aprendendo a utilizar o micro-framework Lumen para criar APIs Rest.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Configuração do Ambiente
+Dentro do repositório existe um arquivo chamado ***.env.example*** o qual deve ser renomeado para ***.env*** apenas. Dentro deste arquivo deve ser configurado as informações do banco de dados local. As principais configurações são:
 
-## Official Documentation
+- DB_CONNECTION=mysql #Banco de Dados
+- DB_HOST=127.0.0.1 #IP do Banco, padrão Localhost
+- DB_PORT=3306 #Porta de comunicação
+- DB_DATABASE=lumen-api #Nome do banco de dados
+- DB_USERNAME=root #Usuário de conexão com o banco
+- DB_PASSWORD= #Senha do usuário
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+É necessário criar um banco de dados específico para rodar a migração e população dos dados, este banco é informado na tag DB_DATABASE
 
-## Security Vulnerabilities
+## Comandos para execução  
+Comando necessário para atualizar dependências do composer
+> composer update --no-scripts
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Comando para executar a migração do banco
+> php artisan migrate
 
-## License
+Comando para popular o banco de dados
+> php artisan db:seed
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Após estas configurações o projeto está pronto para ser executado.

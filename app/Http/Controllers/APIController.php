@@ -57,11 +57,13 @@ class APIController extends Controller
 
     public function AlteraCliente(Request $data)
     {
+        
         $cliente = Clientes::find($data->id);
-        $cliente-> nome = $data->nome;
+        
+        $cliente->nome = $data->nome;
         $cliente->cnpj = $data->cnpj;
         $cliente->save();
 
-        return response($cliente, 200)->header('Content-Type', 'application/json');
+        return response($cliente, 201)->header('Content-Type', 'application/json');
     }
 }
